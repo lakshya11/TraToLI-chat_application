@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^signup$', views.signup, name='signup'),
     url(r'^login/$', auth_views.login, {'template_name': 'chat_app/login.html'},name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
+    url(r'^startChat/(?P<receiver>(.*?))$', views.start_chat, name='start_chat'),
 ]

@@ -1,7 +1,20 @@
 <head>
 <head>
 	<body>
-		<p>"Lakshya Bansal"</p>
-		{{ arg }}
+		<p>Say Hi to your friends!!</p>
+		<table>
+			<tr>
+				<th>
+					USERS
+				</th>
+			</tr>
+			{% for user in users %}
+				<tr>
+					<td>
+						<a href="{% url 'start_chat' receiver=user.username %}">{{ user }}</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
 	</body>
 </html>
